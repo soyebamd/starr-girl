@@ -1,0 +1,1138 @@
+/* ====================================================
+   STARR GIRL THEME — Custom Styles
+   Brand: #FF2090 (hot pink), #FFE566 (yellow), #1a1a1a (dark)
+   Fonts: Fredoka One (headings), Nunito (body)
+   ==================================================== */
+
+/* --- Google Fonts Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap');
+
+/* --- CSS Variables --- */
+:root {
+  --sg-pink: #FF2090;
+  --sg-pink-light: #FFB3DC;
+  --sg-pink-pale: #FFF0F8;
+  --sg-yellow: #FFE566;
+  --sg-dark: #1a1a1a;
+  --sg-dark-purple: #1a0a14;
+  --sg-purple-mid: #3d0a2a;
+  --sg-purple-deep: #5a1040;
+  --sg-gray: #888;
+  --sg-gray-light: #555;
+  --sg-white: #fff;
+  --sg-font-heading: 'Fredoka One', cursive;
+  --sg-font-body: 'Nunito', sans-serif;
+}
+
+/* --- Global Reset & Base --- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: var(--sg-font-body) !important;
+  background: #fff !important;
+  color: var(--sg-dark) !important;
+  overflow-x: hidden;
+}
+
+/* ==========================================
+   ANNOUNCEMENT BAR
+   ========================================== */
+.announcement-bar {
+  background: var(--sg-dark) !important;
+  color: var(--sg-yellow) !important;
+  font-family: var(--sg-font-body) !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.5px !important;
+  padding: 10px 24px !important;
+}
+
+.announcement-bar__message {
+  color: var(--sg-yellow) !important;
+  font-weight: 800 !important;
+}
+
+.announcement-bar__message a {
+  color: var(--sg-yellow) !important;
+  text-decoration: none !important;
+}
+
+/* ==========================================
+   HEADER / NAV
+   ========================================== */
+.header-wrapper,
+.header {
+  background: #fff !important;
+  border-bottom: 2px solid var(--sg-pink) !important;
+  box-shadow: 0 2px 12px rgba(255,32,144,0.08) !important;
+  padding: 14px 40px !important;
+}
+
+.header__heading-link,
+.header__heading {
+  font-family: var(--sg-font-heading) !important;
+  color: var(--sg-dark) !important;
+}
+
+/* Nav links */
+.header__menu-item,
+.header__menu-item .link {
+  font-family: var(--sg-font-body) !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  color: #555 !important;
+  text-decoration: none !important;
+  transition: color 0.2s !important;
+}
+
+.header__menu-item:hover .link,
+.header__menu-item:hover {
+  color: var(--sg-pink) !important;
+}
+
+/* Join the Club CTA button in header */
+.header__menu-item--join-club,
+.header .button--primary,
+.header .shopify-challenge__button {
+  background: var(--sg-pink) !important;
+  color: #fff !important;
+  padding: 10px 22px !important;
+  border-radius: 50px !important;
+  font-family: var(--sg-font-body) !important;
+  font-size: 13px !important;
+  font-weight: 900 !important;
+  box-shadow: 0 4px 12px rgba(255,32,144,0.35) !important;
+  border: none !important;
+  transition: transform 0.15s !important;
+  text-decoration: none !important;
+}
+
+.header .button--primary:hover {
+  transform: translateY(-2px) !important;
+}
+
+/* ==========================================
+   HERO / IMAGE BANNER
+   ========================================== */
+.banner,
+.banner__media,
+.section-image-banner {
+  background: linear-gradient(160deg, #1a0a14 0%, #3d0a2a 50%, #1a0a14 100%) !important;
+  min-height: 92vh !important;
+  position: relative !important;
+}
+
+.banner__content {
+  text-align: center !important;
+  max-width: 700px !important;
+  margin: 0 auto !important;
+  padding: 40px 24px !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.banner__heading {
+  font-family: var(--sg-font-heading) !important;
+  color: #fff !important;
+  text-shadow: 0 4px 24px rgba(255,32,144,0.5) !important;
+  font-size: clamp(28px, 5vw, 56px) !important;
+  margin-bottom: 28px !important;
+}
+
+.banner__text {
+  font-family: var(--sg-font-heading) !important;
+  font-size: clamp(20px, 3vw, 30px) !important;
+  color: rgba(255,255,255,0.85) !important;
+  margin-bottom: 36px !important;
+}
+
+/* Hero eyebrow label */
+.banner__eyebrow,
+.banner .section-header__eyebrow {
+  display: inline-block !important;
+  background: rgba(255,32,144,0.15) !important;
+  border: 1px solid rgba(255,32,144,0.5) !important;
+  color: #FFB3DC !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  padding: 6px 18px !important;
+  border-radius: 20px !important;
+  margin-bottom: 28px !important;
+}
+
+/* Hero primary button */
+.banner .button--primary,
+.banner .button {
+  background: var(--sg-pink) !important;
+  color: #fff !important;
+  padding: 16px 40px !important;
+  border-radius: 50px !important;
+  font-family: var(--sg-font-body) !important;
+  font-size: 16px !important;
+  font-weight: 900 !important;
+  box-shadow: 0 6px 24px rgba(255,32,144,0.5) !important;
+  border: none !important;
+  transition: transform 0.15s, box-shadow 0.15s !important;
+  letter-spacing: 0.5px !important;
+}
+
+.banner .button--primary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 32px rgba(255,32,144,0.6) !important;
+}
+
+/* Secondary button (Join the Club outline) */
+.banner .button--secondary {
+  background: transparent !important;
+  color: #fff !important;
+  padding: 16px 40px !important;
+  border-radius: 50px !important;
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  border: 2px solid rgba(255,255,255,0.5) !important;
+  transition: border-color 0.2s, background 0.2s !important;
+}
+
+.banner .button--secondary:hover {
+  border-color: #fff !important;
+  background: rgba(255,255,255,0.1) !important;
+}
+
+/* ==========================================
+   SECTION TAGS / LABELS
+   ========================================== */
+.section-header__eyebrow,
+.eyebrow-label,
+.collection-list__eyebrow,
+.featured-collection__eyebrow,
+.rich-text__eyebrow {
+  display: inline-block !important;
+  background: var(--sg-yellow) !important;
+  color: var(--sg-dark) !important;
+  font-family: var(--sg-font-body) !important;
+  font-size: 11px !important;
+  font-weight: 900 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  padding: 5px 14px !important;
+  border-radius: 50px !important;
+  margin-bottom: 14px !important;
+  border: 2px solid var(--sg-dark) !important;
+}
+
+/* ==========================================
+   SECTION TITLES (HEADINGS)
+   ========================================== */
+h1, h2, h3,
+.section-header__title,
+.featured-collection__title,
+.rich-text__heading,
+.collection-list__heading {
+  font-family: var(--sg-font-heading) !important;
+  color: var(--sg-dark) !important;
+}
+
+.section-header__title,
+.featured-collection__title {
+  font-size: clamp(28px, 4vw, 48px) !important;
+  line-height: 1.15 !important;
+  margin-bottom: 12px !important;
+}
+
+/* ==========================================
+   PRODUCT CARDS (COLLECTION GRID)
+   ========================================== */
+.card-wrapper,
+.card {
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  border: 3px solid var(--sg-dark) !important;
+  box-shadow: 5px 5px 0 var(--sg-dark) !important;
+  transition: transform 0.15s, box-shadow 0.15s !important;
+  background: #fff !important;
+}
+
+.card-wrapper:hover,
+.card:hover {
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 7px 7px 0 var(--sg-dark) !important;
+}
+
+.card__heading,
+.card .card__heading a {
+  font-family: var(--sg-font-heading) !important;
+  font-size: 17px !important;
+  color: var(--sg-dark) !important;
+  margin-bottom: 4px !important;
+}
+
+.card__information .caption-with-letter-spacing {
+  font-size: 13px !important;
+  color: var(--sg-gray) !important;
+  font-weight: 600 !important;
+}
+
+.price,
+.price__regular,
+.price--on-sale .price__sale {
+  font-family: var(--sg-font-heading) !important;
+  font-size: 19px !important;
+  color: var(--sg-pink) !important;
+}
+
+/* Product availability badge */
+.badge,
+.card .badge {
+  background: var(--sg-pink) !important;
+  color: #fff !important;
+  font-family: var(--sg-font-body) !important;
+  font-size: 10px !important;
+  font-weight: 900 !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  padding: 3px 10px !important;
+  border-radius: 50px !important;
+  border: 2px solid var(--sg-dark) !important;
+}
+
+/* Sold out badge */
+.badge--sold-out {
+  background: #888 !important;
+}
+
+/* Card image hover effect */
+.card__media img {
+  transition: transform 0.3s !important;
+}
+
+.card-wrapper:hover .card__media img {
+  transform: scale(1.03) !important;
+}
+
+/* ==========================================
+   COLLECTION HERO (Shop page banner)
+   ========================================== */
+.collection-hero,
+.main-collection-banner,
+.section-collection-hero {
+  background: linear-gradient(135deg, #FFB3DC 0%, #E8B4FF 50%, #B8ECFF 100%) !important;
+  padding: 60px 48px !important;
+  text-align: center !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.collection-hero::before {
+  content: '⭐ 💖 🌟 💫 ✨ ⭐ 💖';
+  position: absolute !important;
+  top: 12px !important;
+  left: 0 !important;
+  right: 0 !important;
+  font-size: 20px !important;
+  opacity: 0.25 !important;
+  letter-spacing: 36px !important;
+}
+
+.collection-hero__title,
+.collection__title {
+  font-family: var(--sg-font-heading) !important;
+  font-size: clamp(28px, 4vw, 48px) !important;
+  color: var(--sg-dark) !important;
+}
+
+/* ==========================================
+   PRE-ORDER / INFO BANNER
+   ========================================== */
+.sg-preorder-banner {
+  background: var(--sg-yellow) !important;
+  border: 3px solid var(--sg-dark) !important;
+  border-radius: 16px !important;
+  padding: 18px 28px !important;
+  margin-bottom: 32px !important;
+  max-width: 1100px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  flex-wrap: wrap !important;
+  font-family: var(--sg-font-body) !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+}
+
+/* ==========================================
+   NEWS / DROPS CARDS (Multicolumn)
+   ========================================== */
+.multicolumn-list__item,
+.column-with-text {
+  background: #fff !important;
+  border: 2px solid var(--sg-dark) !important;
+  border-radius: 20px !important;
+  padding: 24px !important;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.08) !important;
+}
+
+/* Status badges for news cards */
+.sg-status-badge {
+  display: inline-block !important;
+  font-size: 10px !important;
+  font-weight: 900 !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  padding: 3px 10px !important;
+  border-radius: 50px !important;
+  margin-bottom: 8px !important;
+}
+
+.sg-status-badge--available {
+  background: var(--sg-pink) !important;
+  color: #fff !important;
+  border: 2px solid var(--sg-dark) !important;
+}
+
+.sg-status-badge--coming {
+  background: var(--sg-yellow) !important;
+  color: var(--sg-dark) !important;
+  border: 2px solid var(--sg-dark) !important;
+}
+
+.sg-status-badge--tours {
+  background: #c4aaff !important;
+  color: var(--sg-dark) !important;
+  border: 2px solid var(--sg-dark) !important;
+}
+
+/* ==========================================
+   NEWSLETTER / CLUB SIGNUP SECTION
+   ========================================== */
+.email-signup-banner,
+.newsletter,
+.section-newsletter {
+  background: var(--sg-pink-pale) !important;
+  padding: 72px 48px !important;
+  text-align: center !important;
+}
+
+.email-signup-banner .section-header__title,
+.newsletter__title {
+  font-family: var(--sg-font-heading) !important;
+  font-size: clamp(28px, 4vw, 48px) !important;
+  color: var(--sg-dark) !important;
+  max-width: 560px !important;
+  margin: 0 auto 10px !important;
+}
+
+.newsletter__subtext,
+.email-signup-banner .section-header__description {
+  font-size: 16px !important;
+  color: #666 !important;
+  font-weight: 600 !important;
+  max-width: 480px !important;
+  margin: 0 auto 36px !important;
+  line-height: 1.6 !important;
+}
+
+/* Newsletter form inputs */
+.newsletter__field,
+.field__input,
+.email-signup-banner input[type="email"],
+.email-signup-banner input[type="text"] {
+  border: 3px solid var(--sg-pink-light) !important;
+  border-radius: 14px !important;
+  font-family: var(--sg-font-body) !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  padding: 14px 18px !important;
+  background: #fff !important;
+  transition: border-color 0.2s !important;
+}
+
+.newsletter__field:focus,
+.field__input:focus {
+  border-color: var(--sg-pink) !important;
+  outline: none !important;
+}
+
+/* Newsletter submit button */
+.newsletter__button,
+.email-signup-banner .button,
+button[type="submit"] {
+  background: var(--sg-pink) !important;
+  color: #fff !important;
+  padding: 16px 32px !important;
+  border-radius: 14px !important;
+  font-family: var(--sg-font-heading) !important;
+  font-size: 17px !important;
+  border: 3px solid var(--sg-dark) !important;
+  cursor: pointer !important;
+  box-shadow: 4px 4px 0 var(--sg-dark) !important;
+  transition: transform 0.1s, box-shadow 0.1s !important;
+}
+
+.newsletter__button:hover,
+.email-signup-banner .button:hover {
+  transform: translate(2px, 2px) !important;
+  box-shadow: 2px 2px 0 var(--sg-dark) !important;
+}
+
+/* ==========================================
+   AGE GATE COMPONENT
+   ========================================== */
+.sg-age-gate {
+  max-width: 460px !important;
+  margin: 0 auto !important;
+  background: #fff !important;
+  border: 3px solid var(--sg-dark) !important;
+  border-radius: 20px !important;
+  padding: 28px !important;
+  box-shadow: 5px 5px 0 var(--sg-dark) !important;
+  text-align: center !important;
+}
+
+.sg-age-gate__title {
+  font-family: var(--sg-font-heading) !important;
+  font-size: 20px !important;
+  color: var(--sg-pink) !important;
+  margin-bottom: 8px !important;
+}
+
+.sg-age-gate .btn-yes {
+  background: var(--sg-pink) !important;
+  color: #fff !important;
+  padding: 12px 28px !important;
+  border-radius: 50px !important;
+  font-family: var(--sg-font-heading) !important;
+  font-size: 15px !important;
+  border: 3px solid var(--sg-dark) !important;
+  box-shadow: 3px 3px 0 var(--sg-dark) !important;
+  cursor: pointer !important;
+}
+
+.sg-age-gate .btn-parent {
+  background: var(--sg-yellow) !important;
+  color: var(--sg-dark) !important;
+  padding: 12px 28px !important;
+  border-radius: 50px !important;
+  font-family: var(--sg-font-heading) !important;
+  font-size: 15px !important;
+  border: 3px solid var(--sg-dark) !important;
+  box-shadow: 3px 3px 0 var(--sg-dark) !important;
+  cursor: pointer !important;
+}
+
+/* ==========================================
+   FAQ PAGE
+   ========================================== */
+.collapsible-content,
+.section-faq {
+  max-width: 780px !important;
+  margin: 0 auto !important;
+  padding: 56px 48px !important;
+}
+
+.faq-hero,
+.collapsible-content__header {
+  background: linear-gradient(135deg, #FFB3DC, #E8B4FF) !important;
+  padding: 56px 48px !important;
+  text-align: center !important;
+}
+
+.accordion__title,
+.summary__title {
+  font-family: var(--sg-font-heading) !important;
+  font-size: 17px !important;
+  color: var(--sg-pink) !important;
+  margin-bottom: 6px !important;
+}
+
+.accordion,
+details.accordion {
+  background: #fff !important;
+  border-radius: 18px !important;
+  padding: 22px 26px !important;
+  border: 3px solid var(--sg-pink-light) !important;
+  margin-bottom: 14px !important;
+  box-shadow: 3px 3px 0 var(--sg-pink-light) !important;
+}
+
+.accordion summary::-webkit-details-marker { display: none !important; }
+
+.accordion__content {
+  font-size: 14px !important;
+  color: #555 !important;
+  line-height: 1.7 !important;
+  font-weight: 600 !important;
+  font-family: var(--sg-font-body) !important;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+.footer,
+.footer__content {
+  background: var(--sg-dark) !important;
+  color: #aaa !important;
+  font-family: var(--sg-font-body) !important;
+}
+
+.footer__inner {
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  padding: 40px 48px 32px !important;
+  border-bottom: 1px solid #333 !important;
+}
+
+.footer-block__heading,
+.footer__heading {
+  font-family: var(--sg-font-heading) !important;
+  font-size: 15px !important;
+  color: #fff !important;
+  margin-bottom: 12px !important;
+}
+
+.footer-block .list-menu__item,
+.footer-block a {
+  font-size: 13px !important;
+  color: #aaa !important;
+  font-weight: 600 !important;
+  transition: color 0.2s !important;
+}
+
+.footer-block .list-menu__item:hover,
+.footer-block a:hover {
+  color: var(--sg-pink) !important;
+}
+
+.footer__bottom {
+  max-width: 1100px !important;
+  margin: 20px auto 0 !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #aaa !important;
+  padding: 0 48px !important;
+}
+
+/* ==========================================
+   GENERAL BUTTONS (Global)
+   ========================================== */
+.button,
+.button--primary {
+  background: var(--sg-pink) !important;
+  color: #fff !important;
+  border-radius: 50px !important;
+  font-family: var(--sg-font-body) !important;
+  font-weight: 900 !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: transform 0.15s, box-shadow 0.15s !important;
+}
+
+.button:hover,
+.button--primary:hover {
+  transform: translateY(-2px) !important;
+}
+
+.button--secondary {
+  background: var(--sg-dark) !important;
+  color: #fff !important;
+  border-radius: 50px !important;
+  font-family: var(--sg-font-body) !important;
+  font-weight: 900 !important;
+  border: none !important;
+}
+
+/* ==========================================
+   PRODUCT PAGE
+   ========================================== */
+.product__title {
+  font-family: var(--sg-font-heading) !important;
+  color: var(--sg-dark) !important;
+}
+
+.product__price {
+  font-family: var(--sg-font-heading) !important;
+  color: var(--sg-pink) !important;
+  font-size: 24px !important;
+}
+
+.product-form__submit {
+  background: var(--sg-pink) !important;
+  color: #fff !important;
+  border-radius: 50px !important;
+  font-family: var(--sg-font-body) !important;
+  font-size: 16px !important;
+  font-weight: 900 !important;
+  padding: 16px 40px !important;
+  box-shadow: 0 6px 24px rgba(255,32,144,0.4) !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: transform 0.15s !important;
+}
+
+.product-form__submit:hover {
+  transform: translateY(-2px) !important;
+}
+
+/* Variant pills */
+.swatch-input__input:checked + .swatch-input__label,
+.variant-input:checked + .btn {
+  background: var(--sg-pink) !important;
+  color: #fff !important;
+  border-color: var(--sg-pink) !important;
+}
+
+/* ==========================================
+   COLLECTION GRID PRODUCT SECTION
+   ========================================== */
+.product-section {
+  background: #fff !important;
+  padding: 56px 48px !important;
+}
+
+.drop-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)) !important;
+  gap: 20px !important;
+  margin-top: 40px !important;
+  max-width: 1100px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* ==========================================
+   UPCOMING DROPS SECTION
+   ========================================== */
+.sg-drops-section {
+  background: var(--sg-pink-pale) !important;
+  padding: 64px 48px !important;
+}
+
+.sg-drop-card {
+  background: #fff !important;
+  border: 2px solid var(--sg-dark) !important;
+  border-radius: 20px !important;
+  padding: 24px !important;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.1) !important;
+  transition: transform 0.15s !important;
+}
+
+.sg-drop-card:hover {
+  transform: translateY(-3px) !important;
+}
+
+.sg-drop-card__title {
+  font-family: var(--sg-font-heading) !important;
+  font-size: 18px !important;
+  color: var(--sg-dark) !important;
+  margin-bottom: 6px !important;
+}
+
+.sg-drop-card__date {
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  color: var(--sg-pink) !important;
+  margin-bottom: 10px !important;
+}
+
+.sg-drop-card__text {
+  font-size: 14px !important;
+  color: #666 !important;
+  font-weight: 600 !important;
+  line-height: 1.6 !important;
+  margin-bottom: 14px !important;
+}
+
+.sg-drop-card__link {
+  font-family: var(--sg-font-heading) !important;
+  font-size: 14px !important;
+  color: var(--sg-pink) !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+
+/* ==========================================
+   COLLECTION CONTAINERS / COLORWAY CARDS
+   ========================================== */
+.collection-list .collection-list__item {
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  border: 3px solid var(--sg-dark) !important;
+  box-shadow: 5px 5px 0 var(--sg-dark) !important;
+  background: #fff !important;
+  transition: transform 0.15s, box-shadow 0.15s !important;
+}
+
+.collection-list .collection-list__item:hover {
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 7px 7px 0 var(--sg-dark) !important;
+}
+
+.collection-list .card__heading {
+  font-family: var(--sg-font-heading) !important;
+  color: var(--sg-dark) !important;
+}
+
+/* ==========================================
+   SEARCH
+   ========================================== */
+.search__input {
+  border: 3px solid var(--sg-pink-light) !important;
+  border-radius: 14px !important;
+  font-family: var(--sg-font-body) !important;
+  font-weight: 700 !important;
+}
+
+.search__input:focus {
+  border-color: var(--sg-pink) !important;
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE
+   ========================================== */
+@media (max-width: 768px) {
+  .header-wrapper,
+  .header {
+    padding: 12px 20px !important;
+  }
+
+  .header__menu {
+    display: none !important;
+  }
+
+  .product-section,
+  .email-signup-banner,
+  .collection-hero,
+  .collapsible-content {
+    padding: 48px 20px !important;
+  }
+
+  .footer__inner {
+    padding: 40px 20px 32px !important;
+    flex-direction: column !important;
+  }
+
+  .footer__bottom {
+    padding: 0 20px !important;
+    flex-direction: column !important;
+  }
+
+  .banner {
+    min-height: 70vh !important;
+  }
+}
+
+/* ==========================================
+   RICH TEXT SECTIONS
+   ========================================== */
+.rich-text__text {
+  font-family: var(--sg-font-body) !important;
+  font-size: 16px !important;
+  color: #555 !important;
+  font-weight: 600 !important;
+  line-height: 1.6 !important;
+}
+
+/* ==========================================
+   SLIDESHOW
+   ========================================== */
+.slideshow__slide {
+  background: linear-gradient(160deg, #1a0a14 0%, #3d0a2a 50%, #1a0a14 100%) !important;
+}
+
+.slideshow .banner__heading {
+  color: #fff !important;
+  font-family: var(--sg-font-heading) !important;
+}
+
+/* ==========================================
+   UTILITIES
+   ========================================== */
+.sg-section-tag {
+  display: inline-block;
+  background: var(--sg-yellow);
+  color: var(--sg-dark);
+  font-family: var(--sg-font-body);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 50px;
+  margin-bottom: 14px;
+  border: 2px solid var(--sg-dark);
+}
+
+.sg-section-title {
+  font-family: var(--sg-font-heading);
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.15;
+  margin-bottom: 12px;
+  color: var(--sg-dark);
+}
+
+.sg-section-sub {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  max-width: 560px;
+  font-weight: 600;
+}
+
+/* Confirmation toast */
+.sg-confirmation {
+  background: #fff0f8;
+  border: 2px solid var(--sg-pink-light);
+  border-radius: 14px;
+  padding: 20px 24px;
+  font-family: var(--sg-font-body);
+}
+
+.sg-confirmation__title {
+  font-family: var(--sg-font-heading);
+  font-size: 18px;
+  color: var(--sg-dark);
+  margin-bottom: 6px;
+}
+
+/* ==========================================
+   STARRGIRL COLLECTION HERO OVERRIDE
+   ========================================== */
+.collection-hero {
+  background: linear-gradient(135deg, #FFB3DC 0%, #E8B4FF 50%, #B8ECFF 100%) !important;
+  padding: 60px 48px !important;
+  text-align: center !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.collection-hero::before {
+  content: '⭐ 💖 🌟 💫 ✨ ⭐ 💖' !important;
+  position: absolute !important;
+  top: 12px !important;
+  left: 0 !important;
+  right: 0 !important;
+  font-size: 20px !important;
+  opacity: 0.25 !important;
+  letter-spacing: 36px !important;
+  pointer-events: none !important;
+}
+
+.collection-hero__title {
+  font-family: 'Fredoka One', cursive !important;
+  font-size: clamp(28px, 4vw, 48px) !important;
+  color: #1a1a1a !important;
+  font-weight: 400 !important;
+  margin-bottom: 12px !important;
+}
+
+.collection-hero__description {
+  font-size: 16px !important;
+  color: #555 !important;
+  font-weight: 600 !important;
+  max-width: 560px !important;
+  margin: 0 auto !important;
+  font-family: 'Nunito', sans-serif !important;
+}
+
+/* ==========================================
+   ANNOUNCEMENT BAR OVERRIDE (Dark bg yellow text)
+   ========================================== */
+.announcement-bar {
+  background-color: #1a1a1a !important;
+}
+
+.announcement-bar__message,
+.announcement-bar__link {
+  color: #FFE566 !important;
+  font-weight: 800 !important;
+  font-size: 13px !important;
+}
+
+/* ==========================================
+   HEADER OVERRIDE  
+   ========================================== */
+.header-wrapper {
+  background-color: #fff !important;
+  border-bottom: 2px solid #FF2090 !important;
+  box-shadow: 0 2px 12px rgba(255,32,144,0.08) !important;
+}
+
+/* Nav CTA pill button */
+.header .button,
+.header__minor-menu .button {
+  background: #FF2090 !important;
+  color: #fff !important;
+  border-radius: 50px !important;
+  padding: 10px 22px !important;
+  font-weight: 900 !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(255,32,144,0.35) !important;
+}
+
+/* ==========================================
+   MULTICOLUMN (DROPS SECTION) OVERRIDE
+   ========================================== */
+.multicolumn-list__item {
+  background: #fff !important;
+  border: 2px solid #1a1a1a !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+}
+
+.multicolumn-card__info {
+  padding: 20px !important;
+}
+
+.multicolumn-card__title {
+  font-family: 'Fredoka One', cursive !important;
+  font-size: 18px !important;
+  color: #1a1a1a !important;
+}
+
+.multicolumn-card .rte {
+  font-size: 14px !important;
+  color: #555 !important;
+  font-weight: 600 !important;
+  line-height: 1.6 !important;
+  font-family: 'Nunito', sans-serif !important;
+}
+
+/* ==========================================
+   COLLAPSIBLE CONTENT (FAQ) OVERRIDE  
+   ========================================== */
+.collapsible-content__heading {
+  font-family: 'Fredoka One', cursive !important;
+  color: #1a1a1a !important;
+}
+
+.accordion summary {
+  cursor: pointer !important;
+}
+
+.accordion summary .summary__title {
+  font-family: 'Fredoka One', cursive !important;
+  font-size: 17px !important;
+  color: #FF2090 !important;
+}
+
+.accordion .content-container {
+  font-size: 14px !important;
+  color: #555 !important;
+  line-height: 1.7 !important;
+  font-weight: 600 !important;
+  font-family: 'Nunito', sans-serif !important;
+}
+
+/* Section with light pink bg for FAQ */
+.collapsible-content--scheme-2,
+.section-collapsible-content {
+  background: linear-gradient(135deg, #FFB3DC, #E8B4FF) !important;
+}
+
+/* ==========================================
+   FOOTER SECTION OVERRIDES  
+   ========================================== */
+.footer {
+  background-color: #1a1a1a !important;
+}
+
+.footer__heading {
+  font-family: 'Fredoka One', cursive !important;
+  color: #fff !important;
+}
+
+.footer-block__newsletter-caption {
+  color: #aaa !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  font-family: 'Nunito', sans-serif !important;
+}
+
+.footer__copyright {
+  color: #aaa !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+}
+
+.footer__copyright a {
+  color: #aaa !important;
+}
+
+.footer__copyright a:hover {
+  color: #FF2090 !important;
+}
+
+/* ==========================================
+   PRODUCT PAGE OVERRIDES  
+   ========================================== */
+.product__title h1 {
+  font-family: 'Fredoka One', cursive !important;
+  font-size: 28px !important;
+  color: #1a1a1a !important;
+}
+
+.product__text .price__regular .price-item {
+  font-family: 'Fredoka One', cursive !important;
+  font-size: 24px !important;
+  color: #FF2090 !important;
+}
+
+.product-form__submit {
+  background: #FF2090 !important;
+  color: #fff !important;
+  border-radius: 50px !important;
+  font-family: 'Nunito', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 16px !important;
+  padding: 16px 40px !important;
+  border: none !important;
+  box-shadow: 0 6px 24px rgba(255,32,144,0.4) !important;
+  transition: transform 0.15s !important;
+}
+
+.product-form__submit:hover {
+  transform: translateY(-2px) !important;
+}
+
+/* SOLD OUT styling */
+.product-form__submit[disabled],
+.product-form__submit.disabled {
+  background: #888 !important;
+  box-shadow: none !important;
+}
+
+/* ==========================================
+   RICH TEXT / SECTION HEADERS GLOBAL
+   ========================================== */
+.section-header {
+  text-align: center !important;
+  margin-bottom: 32px !important;
+}
+
+.section-header .title {
+  font-family: 'Fredoka One', cursive !important;
+  color: #1a1a1a !important;
+}
+
+/* Featured collection "View all" button */
+.featured-collection .button {
+  background: #1a1a1a !important;
+  color: #fff !important;
+  border-radius: 50px !important;
+  font-family: 'Nunito', sans-serif !important;
+  font-weight: 900 !important;
+  border: none !important;
+  padding: 14px 32px !important;
+  transition: transform 0.15s !important;
+}
+
+.featured-collection .button:hover {
+  transform: translateY(-2px) !important;
+}

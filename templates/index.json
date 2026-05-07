@@ -1,0 +1,295 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image-banner": {
+      "type": "image-banner",
+      "blocks": {
+        "subheading": {
+          "type": "text",
+          "settings": {
+            "text": "Nova Starr's Official Collection",
+            "text_style": "subtitle"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Color-coordinated pieces for girls who show up, stand out, and own their space.",
+            "heading_size": "h1"
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop Now ✨",
+            "button_link_1": "/collections/all",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "subheading",
+        "heading",
+        "buttons"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_overlay_opacity": 30,
+        "image_height": "large",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-1",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "starr_girl_banner_mT7M7J": {
+      "type": "starr-girl-banner",
+      "name": "StarrGirl Banner",
+      "settings": {
+        "use_gradient": true,
+        "gradient_color_1": "#2d0a1e",
+        "gradient_color_2": "#5a1040",
+        "gradient_direction": 160,
+        "bg_color": "#2d0a1e",
+        "overlay_opacity": 30,
+        "banner_height": 90,
+        "tag_text": "Nova Starr's Official Collection",
+        "logo_image": "shopify://shop_images/logo-2.png",
+        "logo_width": 460,
+        "description": "Color-coordinated pieces for girls who show up, stand out, and own their space.",
+        "button_label": "Shop Now ✨",
+        "button_link": "",
+        "button_color": "#FF2090",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "collection-section-heading": {
+      "type": "rich-text",
+      "blocks": {
+        "badge": {
+          "type": "text",
+          "settings": {
+            "text": "<p>✨ Starr Girls Collection</p>"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Shop the Collection",
+            "heading_size": "h1"
+          }
+        },
+        "body": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Mix & match color-coordinated pieces — tops, bottoms, bows, and socks. Youth to plus sizes. 💖</p>"
+          }
+        }
+      },
+      "block_order": [
+        "badge",
+        "heading",
+        "body"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 16
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "all",
+        "products_to_show": 4,
+        "title": "",
+        "heading_size": "h2",
+        "description": "<p>📦 <strong>About This Drop — Pre-Order:</strong> These are pre-order items. Products will ship within 3–4 weeks of your order date. You will receive a shipping confirmation once your order is on its way.</p>",
+        "show_description": true,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "upcoming-drops-heading": {
+      "type": "rich-text",
+      "blocks": {
+        "badge": {
+          "type": "text",
+          "settings": {
+            "text": "<p>🔔 What's Coming</p>"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Upcoming Drops & Big News! 🌟",
+            "heading_size": "h1"
+          }
+        },
+        "body": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Stay in the loop! New drops, pre-sales, and big Starr Girls moments — all right here. 💖</p>"
+          }
+        }
+      },
+      "block_order": [
+        "badge",
+        "heading",
+        "body"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 16
+      }
+    },
+    "upcoming-drops-cards": {
+      "type": "multicolumn",
+      "blocks": {
+        "card-1": {
+          "type": "column",
+          "settings": {
+            "title": "The First Collection 🌟",
+            "text": "<p><strong>⚡ Available Now</strong><br>Live Now — Pre-Order, Ships 3–4 Weeks</p><p>The debut Starr Girls collection! Shop individual pieces — tops, bottoms, bows, and socks in limited edition coordinating colorways. Youth to plus sizes. 💖</p>",
+            "link_label": "Shop Now ✨ →",
+            "link": ""
+          }
+        },
+        "card-2": {
+          "type": "column",
+          "settings": {
+            "title": "Nova's Music Video",
+            "text": "<p><strong>🎵 Coming Soon</strong><br>Date TBA</p><p>Nova's dropping a new music video — and Starr Girls outfits will be front and center! Watch this space. 👀</p>",
+            "link_label": "Get Notified 🔔 →",
+            "link": ""
+          }
+        },
+        "card-3": {
+          "type": "column",
+          "settings": {
+            "title": "Atlanta School Tour",
+            "text": "<p><strong>🏫 School Tours</strong><br>Spring 2026</p><p>Nova is hitting schools across Atlanta — debuting Starr Girls merch live. Watch Nova's socials for dates and announcements! 😱</p>",
+            "link_label": "Join the Club →",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "card-1",
+        "card-2",
+        "card-3"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 16,
+        "padding_bottom": 40
+      }
+    },
+    "club-signup-banner": {
+      "type": "rich-text",
+      "blocks": {
+        "badge": {
+          "type": "text",
+          "settings": {
+            "text": "<p>💌 The Starr Girls Club</p>"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Be First for Every Drop ⭐",
+            "heading_size": "h1"
+          }
+        },
+        "body": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Join free — get drop alerts, early access, and member perks straight to your phone or inbox.</p>"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Join the Club Free 💖",
+            "button_link": "/pages/club",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "badge",
+        "heading",
+        "body",
+        "button"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "image-banner",
+    "starr_girl_banner_mT7M7J",
+    "collection-section-heading",
+    "featured-collection",
+    "upcoming-drops-heading",
+    "upcoming-drops-cards",
+    "club-signup-banner"
+  ]
+}
