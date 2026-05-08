@@ -160,6 +160,22 @@
               {{ card_product.title | escape }}
             </a>
           </h3>
+
+
+          
+<ul class="card-tags">
+           
+          {% for tag in card_product.tags %}
+            <li>
+  <a href="/collections/all/{{ tag | handleize }}">
+    {{ tag }}
+  </a>
+  </li>
+{% endfor %}
+
+</ul>
+
+
           <div class="card-information">
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>

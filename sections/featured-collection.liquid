@@ -72,10 +72,22 @@
     id="collection-{{ section.id }}"
     data-id="{{ section.id }}"
   >
-    <div class="collection__title title-wrapper title-wrapper--no-top-margin page-width{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
+    <div class="sg-collection__title collection__title title-wrapper title-wrapper--no-top-margin page-width{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
       {%- if section.settings.title != blank -%}
         <h2 class="title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-          {{ section.settings.title }}
+        
+        {% if section.settings.image %}
+
+        
+      
+  {{ section.settings.image | image_url: width: 32, height: 32 | image_tag: class: "collection__icon", width: 32, height: 32 }}
+
+
+
+        {% endif %}
+        
+        
+        <br>  {{ section.settings.title }}
         </h2>
       {%- endif -%}
       {%- if section.settings.description != blank
@@ -228,6 +240,15 @@
       "id": "collection",
       "label": "t:sections.featured-collection.settings.collection.label"
     },
+
+     {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Icon (optional)",
+      "info": "Icon to display next to the title. For best results, use an image that is 32px by 32px."
+    },
+
+
     {
       "type": "range",
       "id": "products_to_show",
