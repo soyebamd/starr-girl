@@ -241,6 +241,7 @@ h3,
 
 .card-tags li {
   position: relative;
+  color: #888;
 }
 
 .card-tags li + li::before {
@@ -252,12 +253,32 @@ h3,
   font-size: 5px;
   color: #888;
 }
-.card-tags a {
-  color: #888;
-}
 
 .card__information a {
   text-decoration: none !important;
+}
+
+.mt-32 {
+  margin-top: 32px !important;
+}
+
+.product-badge {
+  display: inline-block;
+  background: var(--sg-pink);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 50px;
+  margin-bottom: 8px;
+  border: 2px solid var(--sg-dark);
+}
+
+.product-badge--sold-out {
+  color: var(--sg-gray-light);
+  background: transparent;
 }
 
 .card-wrapper,
@@ -657,16 +678,9 @@ details.accordion {
    ========================================== */
 .button,
 .button--primary {
-  background: var(--sg-pink);
-  color: #fff;
-  border-radius: 50px;
-  font-family: var(--sg-font-body);
-  font-weight: 900;
-  border: none;
-  cursor: pointer;
-  transition:
-    transform 0.15s,
-    box-shadow 0.15s;
+  font-family: var(--sg-font-heading) !important;
+  font-size: 16px !important;
+  padding: 14px 36px !important;
 }
 
 .button:hover,

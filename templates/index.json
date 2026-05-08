@@ -99,13 +99,13 @@
           "type": "heading",
           "settings": {
             "heading": "Shop the Collection",
-            "heading_size": "h1"
+            "heading_size": "h0"
           }
         },
         "body": {
           "type": "text",
           "settings": {
-            "text": "<p>Mix & match color-coordinated pieces — tops, bottoms, bows, and socks. Youth to plus sizes. 💖</p>"
+            "text": "<p>Mix & match color-coordinated pieces — tops, bottoms, bows, and socks. <br/>Youth to plus sizes. 💖</p>"
           }
         }
       },
@@ -114,6 +114,9 @@
         "badge",
         "heading",
         "body"
+      ],
+      "custom_css": [
+        "p {color: #555;}"
       ],
       "settings": {
         "desktop_content_position": "center",
@@ -127,12 +130,13 @@
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
-        "collection": "all",
+        "collection": "starr-collection",
+        "image": "shopify://shop_images/box.svg",
         "products_to_show": 4,
         "title": "About This Drop — Pre-Order",
         "heading_size": "h2",
-        "description": "<p>These are pre-order items. Products will ship within<strong>3–4 weeks</strong>of your order date. You will receive a shipping confirmation once your order is on its way.</p>",
-        "show_description": true,
+        "description": "<p>These are pre-order items. Products will ship within<strong> 3–4 weeks </strong>of your order date. You will receive a shipping confirmation once your order is on its way.</p>",
+        "show_description": false,
         "description_style": "body",
         "columns_desktop": 4,
         "enable_desktop_slider": false,
