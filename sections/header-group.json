@@ -17,7 +17,7 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "✨  New collection available now  💖  Join the Club for early access to future drops   ⭐",
             "link": ""
           }
         }
@@ -28,7 +28,7 @@
       "settings": {
         "auto_rotate": false,
         "change_slides_speed": 5,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-3d5beb15-d31b-4f5a-b595-dde1db66c792",
         "show_line_separator": true,
         "show_social": false,
         "enable_country_selector": false,

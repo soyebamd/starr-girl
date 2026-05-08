@@ -63,8 +63,8 @@
    HEADER / NAV
    ========================================== */
 .header-wrapper {
-  border-bottom: 2px solid var(--sg-pink);
-  box-shadow: 0 2px 12px rgba(255, 32, 144, 0.08);
+  box-shadow: none;
+  border-bottom: 2px solid var(--sg-pink) !important;
 }
 
 .list-menu {

@@ -38,11 +38,7 @@
           }
         }
       },
-      "block_order": [
-        "subheading",
-        "heading",
-        "buttons"
-      ],
+      "block_order": ["subheading", "heading", "buttons"],
       "disabled": true,
       "settings": {
         "image_overlay_opacity": 30,
@@ -101,11 +97,7 @@
           }
         }
       },
-      "block_order": [
-        "badge",
-        "heading",
-        "body"
-      ],
+      "block_order": ["badge", "heading", "body"],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
@@ -166,11 +158,7 @@
           }
         }
       },
-      "block_order": [
-        "badge",
-        "heading",
-        "body"
-      ],
+      "block_order": ["badge", "heading", "body"],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
@@ -211,11 +199,7 @@
           }
         }
       },
-      "block_order": [
-        "card-1",
-        "card-2",
-        "card-3"
-      ],
+      "block_order": ["card-1", "card-2", "card-3"],
       "settings": {
         "title": "",
         "heading_size": "h2",
@@ -267,12 +251,7 @@
           }
         }
       },
-      "block_order": [
-        "badge",
-        "heading",
-        "body",
-        "button"
-      ],
+      "block_order": ["badge", "heading", "body", "button"],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
