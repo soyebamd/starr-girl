@@ -123,8 +123,8 @@
         "content_alignment": "center",
         "color_scheme": "scheme-1",
         "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 16
+        "padding_top": 56,
+        "padding_bottom": 20
       }
     },
     "featured-collection": {
@@ -143,7 +143,7 @@
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-adcb8831-edf0-458a-a020-78c5afa54e78",
         "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": false,
@@ -152,17 +152,25 @@
         "quick_add": "none",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 0,
-        "padding_bottom": 40
+        "padding_top": 16,
+        "padding_bottom": 56
       }
     },
     "upcoming-drops-heading": {
       "type": "rich-text",
       "blocks": {
+        "caption_R7Bpk7": {
+          "type": "caption",
+          "settings": {
+            "caption": "🔔 What's Coming",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
         "badge": {
           "type": "text",
           "settings": {
-            "text": "<p>🔔 What's Coming</p>"
+            "text": ""
           }
         },
         "heading": {
@@ -175,18 +183,22 @@
         "body": {
           "type": "text",
           "settings": {
-            "text": "<p>Stay in the loop! New drops, pre-sales, and big Starr Girls moments — all right here. 💖</p>"
+            "text": "<p>Stay in the loop! New drops, pre-sales, and big Starr Girls moments — <br/>all right here. 💖</p>"
           }
         }
       },
       "block_order": [
+        "caption_R7Bpk7",
         "badge",
         "heading",
         "body"
       ],
+      "custom_css": [
+        "p {color: #666;}"
+      ],
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
         "color_scheme": "scheme-2",
         "full_width": true,
         "padding_top": 40,
@@ -200,17 +212,17 @@
           "type": "column",
           "settings": {
             "title": "The First Collection 🌟",
-            "text": "<p><strong>⚡ Available Now</strong><br>Live Now — Pre-Order, Ships 3–4 Weeks</p><p>The debut Starr Girls collection! Shop individual pieces — tops, bottoms, bows, and socks in limited edition coordinating colorways. Youth to plus sizes. 💖</p>",
-            "link_label": "Shop Now ✨ →",
-            "link": ""
+            "text": "<p><em><strong>Live Now — Pre-Order, Ships 3–4 Weeks</strong></em></p><p>The debut Starr Girls collection! Shop individual pieces — tops, bottoms, bows, and socks in limited edition coordinating colorways. Youth to plus sizes. 💖</p>",
+            "link_label": "Shop Now ✨",
+            "link": "#"
           }
         },
         "card-2": {
           "type": "column",
           "settings": {
             "title": "Nova's Music Video",
-            "text": "<p><strong>🎵 Coming Soon</strong><br>Date TBA</p><p>Nova's dropping a new music video — and Starr Girls outfits will be front and center! Watch this space. 👀</p>",
-            "link_label": "Get Notified 🔔 →",
+            "text": "<p><em><strong>Date TBA</strong></em></p><p>Nova's dropping a new music video — and Starr Girls outfits will be front and center! Watch this space. 👀</p>",
+            "link_label": "Get Notified 🔔",
             "link": ""
           }
         },
@@ -218,8 +230,8 @@
           "type": "column",
           "settings": {
             "title": "Atlanta School Tour",
-            "text": "<p><strong>🏫 School Tours</strong><br>Spring 2026</p><p>Nova is hitting schools across Atlanta — debuting Starr Girls merch live. Watch Nova's socials for dates and announcements! 😱</p>",
-            "link_label": "Join the Club →",
+            "text": "<p><em><strong>Spring 2026</strong></em></p><p>Nova is hitting schools across Atlanta — debuting Starr Girls merch live. Watch Nova's socials for dates and announcements! 😱</p>",
+            "link_label": "Join the Club",
             "link": ""
           }
         }
@@ -235,7 +247,7 @@
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "",
-        "button_link": "",
+        "button_link": "#",
         "columns_desktop": 3,
         "column_alignment": "left",
         "background_style": "primary",

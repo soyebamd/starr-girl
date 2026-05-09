@@ -407,11 +407,18 @@ h3,
    ========================================== */
 .multicolumn-list__item,
 .column-with-text {
-  background: #fff;
-  border: 2px solid var(--sg-dark);
+  background: rgb(255, 255, 255);
   border-radius: 20px;
-  padding: 24px;
-  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.08);
+  padding: 26px !important;
+  border: 3px solid rgb(26, 26, 26);
+  box-shadow: rgb(26, 26, 26) 4px 4px 0px;
+  transition: transform 0.15s !important;
+}
+
+.multicolumn-list__item:hover,
+.column-with-text:hover {
+  transform: translate(-2px, -2px) !important;
+  /* box-shadow: rgb(26, 26, 26) 6px 6px 0px; */
 }
 
 /* Status badges for news cards */
@@ -681,6 +688,19 @@ details.accordion {
   font-family: var(--sg-font-heading) !important;
   font-size: 16px !important;
   padding: 14px 36px !important;
+
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 900;
+  box-shadow: 0 6px 24px rgba(255, 32, 144, 0.5);
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s !important;
+  letter-spacing: 0.5px;
+}
+
+.button-noShadow {
+  box-shadow: none !important;
 }
 
 .button:hover,
@@ -907,13 +927,13 @@ details.accordion {
 .sg-section-tag {
   display: inline-block;
   background: var(--sg-yellow);
-  color: var(--sg-dark) !important;
+  /* color: var(--sg-dark) !important; */
   font-family: var(--sg-font-body);
   font-size: 11px !important;
   font-weight: 900;
   letter-spacing: 2px !important;
   text-transform: uppercase;
-  padding: 5px 14px;
+  padding: 6.5px 14px;
   border-radius: 50px;
   margin-bottom: 14px;
   border: 2px solid var(--sg-dark);
@@ -934,6 +954,11 @@ details.accordion {
   max-width: 560px;
   font-weight: 600;
   margin: auto;
+}
+
+.sg-section-tag.sg-column-tag {
+  line-height: normal;
+  padding: 3.5px 14px;
 }
 
 /* Confirmation toast */
