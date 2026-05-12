@@ -38,7 +38,7 @@
 
     {% if section.settings.button_label != blank %}
       <div class="sg-banner__buttons">
-        <a href="{{ section.settings.button_link }}" class="sg-banner__btn">
+        <a href="{{ section.settings.button_link }}" class="button">
           {{ section.settings.button_label }}
         </a>
       </div>
@@ -102,8 +102,8 @@
     color: rgba(255, 255, 255, 0.88);
     margin-bottom: 36px;
     letter-spacing: 0.5px;
-    font-weight: 700;
-    line-height: 1.4;
+   margin-top: 0;
+    line-height: 1.2;
   }
 
   #shopify-section-{{ section.id }} .sg-banner__buttons {

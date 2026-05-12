@@ -4,10 +4,6 @@
    Fonts: Fredoka One (headings), Nunito (body)
    ==================================================== */
 
-/* --- Google Fonts Import --- 
-@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap");
-*/
-
 /* --- CSS Variables --- */
 :root {
   --sg-pink: #ff2090;
@@ -30,6 +26,10 @@
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+body {
+  letter-spacing: normal !important;
 }
 
 /*helper class*/
@@ -183,6 +183,10 @@
   background: rgba(255, 255, 255, 0.1);
 }
 
+.button.no-shadow {
+  box-shadow: none !important;
+}
+
 /* ==========================================
    SECTION TAGS / LABELS
    ========================================== */
@@ -285,7 +289,7 @@ h3,
 .card {
   border-radius: 20px;
   overflow: hidden;
-  border: 3px solid var(--sg-dark);
+  /* border: 3px solid var(--sg-dark); */
   box-shadow: 5px 5px 0 var(--sg-dark);
   transition:
     transform 0.15s,
@@ -699,6 +703,11 @@ details.accordion {
   letter-spacing: 0.5px;
 }
 
+header .button {
+  font-size: 13px !important;
+  padding: 10px 22px !important;
+}
+
 .button-noShadow {
   box-shadow: none !important;
 }
@@ -1046,12 +1055,6 @@ details.accordion {
 /* ==========================================
    MULTICOLUMN (DROPS SECTION) OVERRIDE
    ========================================== */
-.multicolumn-list__item {
-  background: #fff;
-  border: 2px solid #1a1a1a;
-  border-radius: 20px;
-  overflow: hidden;
-}
 
 .multicolumn-card__info {
   padding: 20px;
