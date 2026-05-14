@@ -355,37 +355,6 @@ h3,
 }
 
 /* ==========================================
-   COLLECTION HERO (Shop page banner)
-   ========================================== */
-.collection-hero,
-.main-collection-banner,
-.section-collection-hero {
-  background: linear-gradient(135deg, #ffb3dc 0%, #e8b4ff 50%, #b8ecff 100%);
-  padding: 60px 48px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.collection-hero::before {
-  content: "⭐ 💖 🌟 💫 ✨ ⭐ 💖";
-  position: absolute;
-  top: 12px;
-  left: 0;
-  right: 0;
-  font-size: 20px;
-  opacity: 0.25;
-  letter-spacing: 36px;
-}
-
-.collection-hero__title,
-.collection__title {
-  font-family: var(--sg-font-heading);
-  font-size: clamp(28px, 4vw, 48px);
-  color: var(--sg-dark);
-}
-
-/* ==========================================
    PRE-ORDER / INFO BANNER
    ========================================== */
 .sg-preorder-banner {
@@ -990,7 +959,6 @@ header .button {
    STARRGIRL COLLECTION HERO OVERRIDE
    ========================================== */
 .collection-hero {
-  background: linear-gradient(135deg, #ffb3dc 0%, #e8b4ff 50%, #b8ecff 100%);
   padding: 60px 48px;
   text-align: center;
   position: relative;
@@ -998,7 +966,6 @@ header .button {
 }
 
 .collection-hero::before {
-  content: "⭐ 💖 🌟 💫 ✨ ⭐ 💖";
   position: absolute;
   top: 12px;
   left: 0;

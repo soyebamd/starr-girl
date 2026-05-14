@@ -1,17 +1,85 @@
 {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
 {{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
 
+
+
 {%- style -%}
+
+
   @media screen and (max-width: 749px) {
     .collection-hero--with-image .collection-hero__inner {
       padding-bottom: calc({{ settings.media_shadow_vertical_offset | at_least: 0 }}px + 2rem);
     }
   }
+
+
+
+.collection-hero::before {
+
+   content: var(--section-emoji);
+
+ 
+}
+
+.collection-hero .sg-section-tag.sg-column-tag {
+  padding: 7px 14px;
+}
+
+
+.collection-hero{
+    padding: 60px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.collection-hero *:not(.collection-hero__title){
+  margin: 0 auto!important;
+}
+
+
+.collection-hero .collection-hero__title{
+  margin:0 0 12px!important;
+}
+
+.collection-hero .sg-section-tag{
+  margin: 0 0 12px!important;
+}
+
+
+
 {%- endstyle -%}
 
-<div class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
+<div class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient"
+
+
+ 
+  style="
+   
+    --section-emoji: '{{ section.settings.emoji }}';
+  
+  "
+
+
+>
   <div class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
     <div class="collection-hero__text-wrapper">
+
+
+
+     {% if section.settings.tag != blank %}
+
+    <p class="sg-section-tag sg-column-tag scroll-trigger animate--slide-in"  style="background-color: {{ section.settings.tag_color }}; color: {{ section.settings.tag_text_color }};" >
+             
+                {{ section.settings.tag }}
+    </p>
+
+    {% endif %}
+
+
+
+    
       <h1 class="collection-hero__title">
         <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
         {{- collection.title | escape -}}
@@ -54,6 +122,37 @@
       "type": "paragraph",
       "content": "t:sections.main-collection-banner.settings.paragraph.content"
     },
+    {
+      "type":"text",
+      "id":"emoji",
+      "label":"Paste emoji",
+      "default":"💖💖💖💖💖💖"
+    },
+
+     {
+          "type": "text",
+      "id":"tag",
+      "label":"Tag",
+      "default":"⚡ Available Now"   
+    
+    },
+
+    {
+      "type":"color",
+      "id":"tag_color",
+      "label":"Tag background color",
+      "default":"#ffe566"
+    },
+
+    
+    {
+      "type":"color",
+      "id":"tag_text_color",
+      "label":"Tag text color",
+      "default":"#000000"
+    },
+
+
     {
       "type": "checkbox",
       "id": "show_collection_description",

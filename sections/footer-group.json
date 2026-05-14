@@ -35,6 +35,9 @@
         "image_Gd77WT",
         "link_list_PaBpJz"
       ],
+      "custom_css": [
+        "a{color:#aaa}"
+      ],
       "settings": {
         "color_scheme": "scheme-3",
         "newsletter_enable": false,

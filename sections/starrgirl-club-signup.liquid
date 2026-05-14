@@ -1,3 +1,5 @@
+{{ 'star-club.css' | asset_url | stylesheet_tag  }}
+
 {% comment %}
   StarrGirl Club Signup Section with COPPA Age Gate
   Includes: age gate → 13+ form / under-13 parent form
@@ -25,62 +27,204 @@
       </div>
     </div>
 
-    <!-- 13+ Signup Form -->
-    <div id="sg-form-13" class="sg-signup-wrap" style="display:none;">
-      <p style="font-size:12px; color:#aaa; text-align:center; margin-bottom:20px;">We'll never share your info. Unsubscribe anytime.</p>
-      {% form 'customer', id: 'sg-newsletter-13' %}
-        <input type="hidden" name="contact[tags]" value="newsletter,starrgirl-club,13-plus">
-        <div class="sg-form-row">
-          <div class="sg-field">
-            <input type="text" name="contact[first_name]" placeholder="First name 💖" class="sg-input" required>
-          </div>
-          <div class="sg-field">
-            <input type="text" name="contact[last_name]" placeholder="Last name" class="sg-input">
-          </div>
-        </div>
-        <div class="sg-field">
-          <input type="email" name="contact[email]" placeholder="Email address 🔵" class="sg-input" required>
-        </div>
-        <div class="sg-field">
-          <input type="tel" name="contact[phone]" placeholder="Phone (optional — for drop alerts 📱)" class="sg-input">
-        </div>
-        <button type="submit" class="sg-btn sg-btn--signup sg-btn--full">
-          Join the Starr Girls Club ⭐
-        </button>
-        <p style="font-size:12px; color:#aaa; text-align:center; margin-top:10px;">We'll never share your info. Unsubscribe anytime.</p>
-      {% endform %}
+   <!-- 13+ Signup Form -->
+<div id="sg-form-13" class="sg-signup-wrap" style="display:none;">
+  
+  <p style="font-size:12px; color:#aaa; text-align:center; margin-bottom:20px;">
+    We'll never share your info. Unsubscribe anytime.
+  </p>
+
+  {%- form 'create_customer', id: 'sg-newsletter-13', novalidate: 'novalidate' -%}
+
+      <input type="hidden" name="return_to" value="{{ request.path }}#sg-club-section">
+
+
+    {% if form.posted_successfully? %}
+      <p class="sg-success">
+        Thanks for joining the Starr Girls Club ⭐
+      </p>
+    {% endif %}
+
+    {% if form.errors %}
+      <div class="sg-errors">
+        {{ form.errors | default_errors }}
+      </div>
+    {% endif %}
+
+    <input type="hidden" name="customer[tags]" value="newsletter,starrgirl-club,13-plus">
+
+    <div class="sg-form-row">
+
+      <div class="sg-field">
+        <input 
+          type="text" 
+          name="customer[first_name]" 
+          placeholder="First name 💖" 
+          class="sg-input"
+          value="{{ form.first_name }}"
+          required
+        >
+      </div>
+
+      <div class="sg-field">
+        <input 
+          type="text" 
+          name="customer[last_name]" 
+          placeholder="Last name" 
+          class="sg-input"
+          value="{{ form.last_name }}"
+        >
+      </div>
+
     </div>
 
-    <!-- Parent Signup Form (Under 13 / COPPA) -->
-    <div id="sg-form-parent" class="sg-signup-wrap" style="display:none;">
-      <div class="sg-coppa-notice">
-        👨‍👩‍👧 Under COPPA, a parent or guardian must sign up for children under 13. Thank you for keeping your Starr Girl safe!
-      </div>
-      {% form 'customer', id: 'sg-newsletter-parent' %}
-        <input type="hidden" name="contact[tags]" value="newsletter,starrgirl-club,parent-signup,under-13">
-        <div class="sg-form-row">
-          <div class="sg-field">
-            <input type="text" name="contact[first_name]" placeholder="Parent first name" class="sg-input" required>
-          </div>
-          <div class="sg-field">
-            <input type="text" name="contact[last_name]" placeholder="Parent last name" class="sg-input" required>
-          </div>
-        </div>
-        <div class="sg-field">
-          <input type="email" name="contact[email]" placeholder="Parent email 🔵" class="sg-input" required>
-        </div>
-        <div class="sg-field">
-          <input type="tel" name="contact[phone]" placeholder="Parent phone (optional 📱)" class="sg-input">
-        </div>
-        <div class="sg-field">
-          <input type="text" name="contact[note]" placeholder="Your daughter's first name 💖" class="sg-input">
-        </div>
-        <button type="submit" class="sg-btn sg-btn--signup sg-btn--full">
-          Sign Up for My Daughter ⭐
-        </button>
-        <p style="font-size:12px; color:#aaa; text-align:center; margin-top:10px;">By signing up you confirm you are the parent or legal guardian. You may request deletion of data at any time.</p>
-      {% endform %}
+    <div class="sg-field">
+      <input 
+        type="email" 
+        name="customer[email]" 
+        placeholder="Email address 🔵" 
+        class="sg-input"
+        value="{{ form.email }}"
+        required
+      >
     </div>
+
+    <div class="sg-field">
+       <label>Create password 🔒</label>
+  <input 
+    type="password" 
+    name="customer[password]" 
+    placeholder="Create password 🔒" 
+    class="sg-input"
+    required
+  >
+</div>
+
+    <div class="sg-field">
+      <input 
+        type="tel" 
+        name="customer[phone]" 
+        placeholder="Phone (optional — for drop alerts 📱)" 
+        class="sg-input"
+        value="{{ form.phone }}"
+      >
+    </div>
+
+    <button type="submit" class="sg-btn sg-btn--signup sg-btn--full">
+      Join the Starr Girls Club ⭐
+    </button>
+
+    <p style="font-size:12px; color:#aaa; text-align:center; margin-top:10px;">
+      We'll never share your info. Unsubscribe anytime.
+    </p>
+
+  {% endform %}
+</div>
+<!-- Parent Signup Form (Under 13 / COPPA) -->
+<div id="sg-form-parent" class="sg-signup-wrap" style="display:none;">
+
+  <div class="sg-coppa-notice">
+    👨‍👩‍👧 Under COPPA, a parent or guardian must sign up for children under 13. Thank you for keeping your Starr Girl safe!
+  </div>
+
+  {%- form 'create_customer', novalidate: 'novalidate' -%}
+
+      <input type="hidden" name="return_to" value="{{ request.path }}#sg-club-section">
+
+
+    {% if form.posted_successfully? %}
+      <p class="sg-success">
+        Thank you for signing up your daughter ⭐
+      </p>
+    {% endif %}
+
+    {% if form.errors %}
+      <div class="sg-errors">
+        {{ form.errors | default_errors }}
+      </div>
+    {% endif %}
+
+    <input type="hidden" name="customer[tags]" value="newsletter,starrgirl-club,parent-signup,under-13">
+
+    <div class="sg-form-row">
+
+      <div class="sg-field">
+        <input 
+          type="text" 
+          name="customer[first_name]" 
+          placeholder="Parent first name" 
+          class="sg-input"
+          value="{{ form.first_name }}"
+          required
+        >
+      </div>
+
+      <div class="sg-field">
+        <input 
+          type="text" 
+          name="customer[last_name]" 
+          placeholder="Parent last name" 
+          class="sg-input"
+          value="{{ form.last_name }}"
+          required
+        >
+      </div>
+
+    </div>
+
+    <div class="sg-field">
+      <input 
+        type="email" 
+        name="customer[email]" 
+        placeholder="Parent email 🔵" 
+        class="sg-input"
+        value="{{ form.email }}"
+        required
+      >
+    </div>
+
+    <div class="sg-field">
+      <label>Create password 🔒</label>
+  <input 
+    type="password" 
+    name="customer[password]" 
+    placeholder="Create password 🔒" 
+    class="sg-input"
+    required
+  >
+
+</div>
+
+    <div class="sg-field">
+      <input 
+        type="tel" 
+        name="customer[phone]" 
+        placeholder="Parent phone (optional 📱)" 
+        class="sg-input"
+        value="{{ form.phone }}"
+      >
+    </div>
+
+    <div class="sg-field">
+      <input 
+        type="text" 
+        name="customer[note]" 
+        placeholder="Your daughter's first name 💖" 
+        class="sg-input"
+      >
+    </div>
+
+    <button type="submit" class="sg-btn sg-btn--signup sg-btn--full">
+      Sign Up for My Daughter ⭐
+    </button>
+
+    <p style="font-size:12px; color:#aaa; text-align:center; margin-top:10px;">
+      By signing up you confirm you are the parent or legal guardian. You may request deletion of data at any time.
+    </p>
+
+  {% endform %}
+
+</div>
 
     <!-- Success Message (shown on return after form submit) -->
     {%- if customer -%}
@@ -93,124 +237,6 @@
 
   </div>
 </div>
-
-<style>
-  .sg-club-section {
-    background: #FFF0F8;
-    padding: 72px 48px;
-    text-align: center;
-  }
-  .sg-club-inner {
-    max-width: 560px;
-    margin: 0 auto;
-  }
-  .sg-age-gate {
-    background: #fff;
-    border: 3px solid #1a1a1a;
-    border-radius: 20px;
-    padding: 28px;
-    box-shadow: 5px 5px 0 #1a1a1a;
-    text-align: center;
-    margin-bottom: 24px;
-  }
-  .sg-age-gate__icon { font-size: 32px; margin-bottom: 10px; }
-  .sg-age-gate__title {
-    font-family: 'Fredoka One', cursive;
-    font-size: 20px;
-    color: #FF2090;
-    margin-bottom: 8px;
-  }
-  .sg-age-gate__sub {
-    font-size: 14px;
-    color: #666;
-    font-weight: 600;
-    margin-bottom: 22px;
-    line-height: 1.5;
-  }
-  .sg-age-buttons {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .sg-btn {
-    display: inline-block;
-    padding: 12px 28px;
-    border-radius: 50px;
-    font-family: 'Fredoka One', cursive;
-    font-size: 15px;
-    border: 3px solid #1a1a1a;
-    box-shadow: 3px 3px 0 #1a1a1a;
-    cursor: pointer;
-    transition: transform 0.1s, box-shadow 0.1s;
-    text-decoration: none;
-  }
-  .sg-btn:hover {
-    transform: translate(2px, 2px);
-    box-shadow: 1px 1px 0 #1a1a1a;
-  }
-  .sg-btn--pink { background: #FF2090; color: #fff; }
-  .sg-btn--yellow { background: #FFE566; color: #1a1a1a; }
-  .sg-btn--signup {
-    background: #FF2090;
-    color: #fff;
-    border-radius: 14px;
-    font-size: 17px;
-    padding: 16px;
-    width: 100%;
-    border: 3px solid #1a1a1a;
-    box-shadow: 4px 4px 0 #1a1a1a;
-    cursor: pointer;
-    margin-top: 8px;
-  }
-  .sg-btn--full { display: block; width: 100%; }
-  .sg-signup-wrap {
-    text-align: left;
-    background: #fff;
-    border: 3px solid #1a1a1a;
-    border-radius: 20px;
-    padding: 28px;
-    box-shadow: 5px 5px 0 #1a1a1a;
-  }
-  .sg-form-row {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 14px;
-  }
-  .sg-form-row .sg-field { flex: 1; }
-  .sg-field { margin-bottom: 14px; }
-  .sg-input {
-    width: 100%;
-    padding: 14px 18px;
-    border: 3px solid #FFB3DC;
-    border-radius: 14px;
-    font-size: 15px;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    background: #fff;
-    transition: border-color 0.2s;
-    box-sizing: border-box;
-  }
-  .sg-input:focus {
-    border-color: #FF2090;
-    outline: none;
-  }
-  .sg-coppa-notice {
-    background: #FFF0F8;
-    border: 2px solid #FFB3DC;
-    border-radius: 12px;
-    padding: 14px 16px;
-    font-size: 13px;
-    font-weight: 700;
-    color: #555;
-    margin-bottom: 20px;
-    line-height: 1.5;
-  }
-  @media (max-width: 600px) {
-    .sg-club-section { padding: 48px 20px; }
-    .sg-form-row { flex-direction: column; }
-  }
-</style>
 
 <script>
 function showForm13() {
