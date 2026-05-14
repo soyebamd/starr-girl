@@ -413,6 +413,16 @@ blockquote {
   font-size: 1.3rem;
   line-height: calc(1 + 0.5 / var(--font-body-scale));
   letter-spacing: 0.04rem;
+
+  padding: 14px 18px;
+  border: 3px solid #ffb3dc;
+  border-radius: 14px;
+  font-size: 15px;
+  font-family: Nunito, sans-serif;
+  font-weight: 700;
+  background: #fff;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
 }
 
 .color-foreground {
@@ -1617,8 +1627,8 @@ details[open] > .share-button__fallback {
   box-sizing: border-box;
   transition: box-shadow var(--duration-short) ease;
   border-radius: var(--inputs-radius);
-  height: 4.5rem;
-  min-height: calc(var(--inputs-border-width) * 2);
+  height: 5.4rem;
+  /* min-height: calc(var(--inputs-border-width) * 2); */
   min-width: calc(7rem + (var(--inputs-border-width) * 2));
   position: relative;
   border: 0;
@@ -1657,10 +1667,11 @@ details[open] > .share-button__fallback {
   left: var(--inputs-border-width);
   border: 0.1rem solid transparent;
   border-radius: var(--inputs-radius);
-  box-shadow: 0 0 0 var(--inputs-border-width)
-    rgba(var(--color-foreground), var(--inputs-border-opacity));
+  /* box-shadow: 0 0 0 var(--inputs-border-width)
+    rgba(var(--color-foreground), var(--inputs-border-opacity)); */
   transition: box-shadow var(--duration-short) ease;
   z-index: 1;
+  border: 3px solid #ffb3dc !important;
 }
 
 .select__select {

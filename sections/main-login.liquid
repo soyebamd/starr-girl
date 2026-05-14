@@ -1,4 +1,5 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
+{{ 'star-club.css' | asset_url | stylesheet_tag  }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -17,6 +18,10 @@
 {%- if section.settings.enable_shop_login_button == false -%}
   {%- assign hide_shop_login_button = true -%}
 {%- endif -%}
+
+
+<div class="sg-club-section ">
+
 
 <div class="customer login section-{{ section.id }}-padding">
   <h1 id="recover" tabindex="-1">
@@ -169,6 +174,8 @@
   {%- endif -%}
 </div>
 
+
+</div>
 {% schema %}
 {
   "name": "t:sections.main-login.name",

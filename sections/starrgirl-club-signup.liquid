@@ -8,6 +8,9 @@
 <div class="sg-club-section color-{{ section.settings.color_scheme }}">
   <div class="sg-club-inner">
 
+
+ 
+
     <div style="text-align:center; margin-bottom: 32px;">
       <span class="sg-section-tag">💖 THE STARR GIRLS CLUB</span>
       <h2 class="sg-section-title">{{ section.settings.heading }}</h2>
@@ -16,215 +19,23 @@
       {% endif %}
     </div>
 
+{%- unless customer -%}
+    
     <!-- Age Gate -->
     <div id="sg-age-gate" class="sg-age-gate">
       <div class="sg-age-gate__icon">🎂</div>
       <div class="sg-age-gate__title">Are you 13 or older?</div>
       <p class="sg-age-gate__sub">We need to know before you join. If you're under 13, a parent or guardian should sign up on your behalf.</p>
       <div class="sg-age-buttons">
-        <button class="sg-btn sg-btn--pink" onclick="showForm13()">Yes, I'm 13+ 🌟</button>
-        <button class="sg-btn sg-btn--yellow" onclick="showFormParent()">Get a parent 👨‍👩‍👧</button>
+
+      <a href="/pages/im-13" class="sg-btn sg-btn--pink">Yes, I'm 13+ 🌟</a>
+
+       <a href="/pages/get-a-parent" class="sg-btn sg-btn--pink">Get a parent 👨‍👩‍👧</a>
+     
       </div>
     </div>
 
-   <!-- 13+ Signup Form -->
-<div id="sg-form-13" class="sg-signup-wrap" style="display:none;">
-  
-  <p style="font-size:12px; color:#aaa; text-align:center; margin-bottom:20px;">
-    We'll never share your info. Unsubscribe anytime.
-  </p>
-
-  {%- form 'create_customer', id: 'sg-newsletter-13', novalidate: 'novalidate' -%}
-
-      <input type="hidden" name="return_to" value="{{ request.path }}#sg-club-section">
-
-
-    {% if form.posted_successfully? %}
-      <p class="sg-success">
-        Thanks for joining the Starr Girls Club ⭐
-      </p>
-    {% endif %}
-
-    {% if form.errors %}
-      <div class="sg-errors">
-        {{ form.errors | default_errors }}
-      </div>
-    {% endif %}
-
-    <input type="hidden" name="customer[tags]" value="newsletter,starrgirl-club,13-plus">
-
-    <div class="sg-form-row">
-
-      <div class="sg-field">
-        <input 
-          type="text" 
-          name="customer[first_name]" 
-          placeholder="First name 💖" 
-          class="sg-input"
-          value="{{ form.first_name }}"
-          required
-        >
-      </div>
-
-      <div class="sg-field">
-        <input 
-          type="text" 
-          name="customer[last_name]" 
-          placeholder="Last name" 
-          class="sg-input"
-          value="{{ form.last_name }}"
-        >
-      </div>
-
-    </div>
-
-    <div class="sg-field">
-      <input 
-        type="email" 
-        name="customer[email]" 
-        placeholder="Email address 🔵" 
-        class="sg-input"
-        value="{{ form.email }}"
-        required
-      >
-    </div>
-
-    <div class="sg-field">
-       <label>Create password 🔒</label>
-  <input 
-    type="password" 
-    name="customer[password]" 
-    placeholder="Create password 🔒" 
-    class="sg-input"
-    required
-  >
-</div>
-
-    <div class="sg-field">
-      <input 
-        type="tel" 
-        name="customer[phone]" 
-        placeholder="Phone (optional — for drop alerts 📱)" 
-        class="sg-input"
-        value="{{ form.phone }}"
-      >
-    </div>
-
-    <button type="submit" class="sg-btn sg-btn--signup sg-btn--full">
-      Join the Starr Girls Club ⭐
-    </button>
-
-    <p style="font-size:12px; color:#aaa; text-align:center; margin-top:10px;">
-      We'll never share your info. Unsubscribe anytime.
-    </p>
-
-  {% endform %}
-</div>
-<!-- Parent Signup Form (Under 13 / COPPA) -->
-<div id="sg-form-parent" class="sg-signup-wrap" style="display:none;">
-
-  <div class="sg-coppa-notice">
-    👨‍👩‍👧 Under COPPA, a parent or guardian must sign up for children under 13. Thank you for keeping your Starr Girl safe!
-  </div>
-
-  {%- form 'create_customer', novalidate: 'novalidate' -%}
-
-      <input type="hidden" name="return_to" value="{{ request.path }}#sg-club-section">
-
-
-    {% if form.posted_successfully? %}
-      <p class="sg-success">
-        Thank you for signing up your daughter ⭐
-      </p>
-    {% endif %}
-
-    {% if form.errors %}
-      <div class="sg-errors">
-        {{ form.errors | default_errors }}
-      </div>
-    {% endif %}
-
-    <input type="hidden" name="customer[tags]" value="newsletter,starrgirl-club,parent-signup,under-13">
-
-    <div class="sg-form-row">
-
-      <div class="sg-field">
-        <input 
-          type="text" 
-          name="customer[first_name]" 
-          placeholder="Parent first name" 
-          class="sg-input"
-          value="{{ form.first_name }}"
-          required
-        >
-      </div>
-
-      <div class="sg-field">
-        <input 
-          type="text" 
-          name="customer[last_name]" 
-          placeholder="Parent last name" 
-          class="sg-input"
-          value="{{ form.last_name }}"
-          required
-        >
-      </div>
-
-    </div>
-
-    <div class="sg-field">
-      <input 
-        type="email" 
-        name="customer[email]" 
-        placeholder="Parent email 🔵" 
-        class="sg-input"
-        value="{{ form.email }}"
-        required
-      >
-    </div>
-
-    <div class="sg-field">
-      <label>Create password 🔒</label>
-  <input 
-    type="password" 
-    name="customer[password]" 
-    placeholder="Create password 🔒" 
-    class="sg-input"
-    required
-  >
-
-</div>
-
-    <div class="sg-field">
-      <input 
-        type="tel" 
-        name="customer[phone]" 
-        placeholder="Parent phone (optional 📱)" 
-        class="sg-input"
-        value="{{ form.phone }}"
-      >
-    </div>
-
-    <div class="sg-field">
-      <input 
-        type="text" 
-        name="customer[note]" 
-        placeholder="Your daughter's first name 💖" 
-        class="sg-input"
-      >
-    </div>
-
-    <button type="submit" class="sg-btn sg-btn--signup sg-btn--full">
-      Sign Up for My Daughter ⭐
-    </button>
-
-    <p style="font-size:12px; color:#aaa; text-align:center; margin-top:10px;">
-      By signing up you confirm you are the parent or legal guardian. You may request deletion of data at any time.
-    </p>
-
-  {% endform %}
-
-</div>
+{% endunless %}
 
     <!-- Success Message (shown on return after form submit) -->
     {%- if customer -%}
@@ -235,19 +46,11 @@
     </div>
     {%- endif -%}
 
+
+
   </div>
 </div>
 
-<script>
-function showForm13() {
-  document.getElementById('sg-age-gate').style.display = 'none';
-  document.getElementById('sg-form-13').style.display = 'block';
-}
-function showFormParent() {
-  document.getElementById('sg-age-gate').style.display = 'none';
-  document.getElementById('sg-form-parent').style.display = 'block';
-}
-</script>
 
 {% schema %}
 {

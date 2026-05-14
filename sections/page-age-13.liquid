@@ -1,0 +1,173 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+{{ 'star-club.css' | asset_url | stylesheet_tag  }}
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+<div class="sg-club-section ">
+
+ <div class="sg-club-inner">
+
+
+ 
+
+    <div style="text-align:center; margin-bottom: 32px;">
+      <span class="sg-section-tag">💖 THE STARR GIRLS CLUB</span>
+      <h2 class="sg-section-title">{{ page.title }} <br> ⭐ </h2>
+      {{ page.content }}
+    </div>
+
+{% unless customer %}
+   <!-- 13+ Signup Form -->
+<div id="sg-form-13" class="sg-signup-wrap">
+  
+  <p style="font-size:12px; color:#aaa; text-align:center; margin-bottom:20px;">
+    We'll never share your info. Unsubscribe anytime.
+  </p>
+
+  {%- form 'create_customer', id: 'sg-newsletter-13', novalidate: 'novalidate' -%}
+
+      <input type="hidden" name="return_to" value="{{ request.path }}">
+
+
+    {% if form.posted_successfully? %}
+      <p class="sg-success">
+         <!-- Success Message (shown on return after form submit) -->
+   Successfully submitted! Thanks for joining the Starr
+      </p>
+    {% endif %}
+
+    {% if form.errors %}
+      <div class="sg-errors">
+        {{ form.errors | default_errors }}
+      </div>
+    {% endif %}
+
+    <input type="hidden" name="customer[tags]" value="newsletter,starrgirl-club,13-plus">
+
+    <div class="sg-form-row">
+
+      <div class="sg-field">
+        <input 
+          type="text" 
+          name="customer[first_name]" 
+          placeholder="First name 💖" 
+          class="sg-input"
+          value="{{ form.first_name }}"
+          required
+        >
+      </div>
+
+      <div class="sg-field">
+        <input 
+          type="text" 
+          name="customer[last_name]" 
+          placeholder="Last name" 
+          class="sg-input"
+          value="{{ form.last_name }}"
+        >
+      </div>
+
+    </div>
+
+    <div class="sg-field">
+      <input 
+        type="email" 
+        name="customer[email]" 
+        placeholder="Email address 🔵" 
+        class="sg-input"
+        value="{{ form.email }}"
+        required
+      >
+    </div>
+
+    <div class="sg-field">
+     
+  <input 
+    type="password" 
+    name="customer[password]" 
+    placeholder="Create password 🔒" 
+    class="sg-input"
+    required
+  >
+</div>
+
+    <div class="sg-field">
+      <input 
+        type="tel" 
+        name="customer[phone]" 
+        placeholder="Phone (optional — for drop alerts 📱)" 
+        class="sg-input"
+        value="{{ form.phone }}"
+      >
+    </div>
+
+    <button type="submit" class="sg-btn sg-btn--signup sg-btn--full">
+      Join the Starr Girls Club ⭐
+    </button>
+
+    <p style="font-size:12px; color:#aaa; text-align:center; margin-top:10px;">
+      We'll never share your info. Unsubscribe anytime.
+    </p>
+
+  {% endform %}
+
+{% endunless %}
+
+
+   {%- if customer -%}
+    <div class="sg-confirmation" style="max-width:480px; margin:0 auto; text-align:left;">
+      <div class="sg-confirmation__title">⭐ You're in!</div>
+      <p>Welcome to the Starr Girls Club, {{ customer.first_name }}! 💖<br>
+      Check your inbox for a confirmation — and get ready for early drop access!</p>
+    </div>
+    {%- endif -%}
+
+
+</div>
+</div>
+
+
+
+{% schema %}
+{
+  "name": "t:sections.main-page.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}

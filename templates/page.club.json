@@ -11,13 +11,26 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "starrgirl_club_signup_ykBN3b": {
+      "type": "starrgirl-club-signup",
+      "name": "StarrGirl Club Signup",
+      "settings": {
+        "heading": "Be First for Every Drop ⭐",
+        "subtext": "Drop alerts, early access, and member-only perks — straight to your phone or inbox. Free to join.",
+        "color_scheme": "scheme-2",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "starrgirl_club_signup_ykBN3b"
   ]
 }
