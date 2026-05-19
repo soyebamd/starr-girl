@@ -21,6 +21,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- StarrGirl: Theme CSS -->
+      
+     {{ 'helper.css' | asset_url | stylesheet_tag }}
     {{ 'starrgirl.css' | asset_url | stylesheet_tag }}
 
     <title>
@@ -304,6 +306,10 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+
+  
+
+
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">

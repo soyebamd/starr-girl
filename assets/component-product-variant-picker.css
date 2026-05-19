@@ -26,7 +26,7 @@ variant-selects {
   margin-bottom: 0.2rem;
 }
 
-.product-form__input input[type='radio'] {
+.product-form__input input[type="radio"] {
   clip: rect(0, 0, 0, 0);
   overflow: hidden;
   position: absolute;
@@ -34,7 +34,10 @@ variant-selects {
   width: 1px;
 }
 
-.product-form__input input[type='radio']:not(.disabled):not(.visually-disabled) + label > .label-unavailable {
+.product-form__input
+  input[type="radio"]:not(.disabled):not(.visually-disabled)
+  + label
+  > .label-unavailable {
   display: none;
 }
 
@@ -57,8 +60,9 @@ variant-selects {
 }
 
 /* Custom styles for Pill display type */
-.product-form__input--pill input[type='radio'] + label {
-  border: var(--variant-pills-border-width) solid rgba(var(--color-foreground), var(--variant-pills-border-opacity));
+.product-form__input--pill input[type="radio"] + label {
+  border: var(--variant-pills-border-width) solid
+    rgba(var(--color-foreground), var(--variant-pills-border-opacity));
   background-color: rgb(var(--color-background));
   color: rgba(var(--color-foreground));
   border-radius: var(--variant-pills-radius);
@@ -75,8 +79,8 @@ variant-selects {
   position: relative;
 }
 
-.product-form__input--pill input[type='radio'] + label:before {
-  content: '';
+.product-form__input--pill input[type="radio"] + label:before {
+  content: "";
   position: absolute;
   top: calc(var(--variant-pills-border-width) * -1);
   right: calc(var(--variant-pills-border-width) * -1);
@@ -84,52 +88,58 @@ variant-selects {
   left: calc(var(--variant-pills-border-width) * -1);
   z-index: -1;
   border-radius: var(--variant-pills-radius);
-  box-shadow: var(--variant-pills-shadow-horizontal-offset) var(--variant-pills-shadow-vertical-offset)
-    var(--variant-pills-shadow-blur-radius) rgba(var(--color-shadow), var(--variant-pills-shadow-opacity));
+  box-shadow: var(--variant-pills-shadow-horizontal-offset)
+    var(--variant-pills-shadow-vertical-offset)
+    var(--variant-pills-shadow-blur-radius)
+    rgba(var(--color-shadow), var(--variant-pills-shadow-opacity));
 }
 
-.product-form__input--pill input[type='radio'] + label:hover {
+.product-form__input--pill input[type="radio"] + label:hover {
   border-color: rgb(var(--color-foreground));
 }
 
-.product-form__input--pill input[type='radio']:checked + label {
+.product-form__input--pill input[type="radio"]:checked + label {
   background-color: rgb(var(--color-foreground));
   color: rgb(var(--color-background));
 }
 
 @media screen and (forced-colors: active) {
-  .product-form__input--pill input[type='radio']:checked + label {
+  .product-form__input--pill input[type="radio"]:checked + label {
     text-decoration: underline;
   }
 
-  .product-form__input--pill input[type='radio']:focus-visible + label {
+  .product-form__input--pill input[type="radio"]:focus-visible + label {
     outline: transparent solid 1px;
     outline-offset: 2px;
   }
 }
 
-.product-form__input--pill input[type='radio']:checked + label::selection {
+.product-form__input--pill input[type="radio"]:checked + label::selection {
   background-color: rgba(var(--color-background), 0.3);
 }
 
-.product-form__input--pill input[type='radio']:disabled + label,
-.product-form__input--pill input[type='radio'].disabled + label {
+.product-form__input--pill input[type="radio"]:disabled + label,
+.product-form__input--pill input[type="radio"].disabled + label {
   border-color: rgba(var(--color-foreground), 0.1);
   color: rgba(var(--color-foreground), 0.6);
   text-decoration: line-through;
 }
 
-.product-form__input--pill input[type='radio'].disabled:checked + label,
-.product-form__input--pill input[type='radio']:disabled:checked + label {
+.product-form__input--pill input[type="radio"].disabled:checked + label,
+.product-form__input--pill input[type="radio"]:disabled:checked + label {
   color: rgba(var(--color-background), 0.6);
 }
-.product-form__input--pill input[type='radio']:focus-visible + label {
-  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0 0.5rem rgba(var(--color-foreground), 0.55);
+.product-form__input--pill input[type="radio"]:focus-visible + label {
+  box-shadow:
+    0 0 0 0.3rem rgb(var(--color-background)),
+    0 0 0 0.5rem rgba(var(--color-foreground), 0.55);
 }
 
 /* Fallback */
-.product-form__input--pill input[type='radio'].focused + label {
-  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0 0.5rem rgba(var(--color-foreground), 0.55);
+.product-form__input--pill input[type="radio"].focused + label {
+  box-shadow:
+    0 0 0 0.3rem rgb(var(--color-background)),
+    0 0 0 0.5rem rgba(var(--color-foreground), 0.55);
 }
 
 /* Custom styles for Swatch display type */
@@ -150,3 +160,100 @@ variant-selects {
   }
 }
 /* End custom styles for Swatch display type */
+
+/* ── Hide the default radio inputs ── */
+.product-form__input--pill input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* ── Default label style (your yellow pill) ── */
+.product-form__input--pill label {
+  background: #ffe566;
+  border: 2px solid #1a1a1a;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  margin-bottom: 8px;
+  font-family: Nunito, sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.15s;
+  user-select: none;
+}
+
+/* ── Selected state (radio is checked) ── */
+.product-form__input--pill input[type="radio"]:checked + label {
+  background: #ff2090 !important;
+  color: #fff !important;
+  border-color: #1a1a1a !important;
+  box-shadow: 2px 2px 0 #1a1a1a;
+}
+
+/* ── Hover ── */
+.product-form__input--pill label:hover {
+  background: #ffd700;
+  border-color: #1a1a1a;
+}
+
+/* ── Sold out / unavailable ── */
+.product-form__input--pill input[type="radio"]:disabled + label {
+  opacity: 0.4;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+/* ── Legend (shows "Adult" / "Youth" title) ── */
+.product-form__input--pill .form__label {
+  font-family: Nunito, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── Hide the "sold out" screen-reader text visually ── */
+.product-form__input--pill .label-unavailable {
+  display: none;
+}
+
+.product-form__input--pill input[type="radio"] + label:hover {
+  background: #fff0f8 !important;
+  color: #1a1a1a !important;
+  border-color: #ff2090 !important;
+}
+
+.button::after {
+  display: none;
+}
+
+.quantity__label span {
+  font-family: Nunito, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.quantity__input {
+  font-weight: 800;
+}
+
+.shopify-payment-button__button {
+  box-shadow: 6px 5px 0px #262626;
+  border-radius: 10px !important;
+  border: solid 1px white;
+}
+
+.shopify-payment-button__button:after,
+.shopify-payment-button__button:before {
+  display: none;
+}

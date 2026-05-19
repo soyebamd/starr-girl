@@ -79,7 +79,22 @@
         {% render 'product-media-gallery', variant_images: variant_images %}
       </div>
       <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-        <section
+       
+      
+      
+      
+      {% if product.selected_or_first_available_variant.inventory_quantity <= 0 
+   and product.selected_or_first_available_variant.inventory_policy == 'continue' %}
+  
+  <div class="sg-section-tag rich-text__caption subtitle subtitle--small scroll-trigger animate--slide-in">
+   📦
+Pre-Order — Ships in 3–4 Weeks
+  </div>
+
+{% endif %}
+
+
+<section
           id="ProductInfo-{{ section.id }}"
           class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
         >
@@ -193,8 +208,12 @@
                 </p>
               {%- when 'description' -%}
                 {%- if product.description != blank -%}
-                  <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
+                    <h3 class="h4 mt-12">About This Piece</h3>
+
+                  <div class="product__description rte quick-add-hidden mt-0" {{ block.shopify_attributes }}>
+                  
                     {{ product.description }}
+
                   </div>
                 {%- endif -%}
               {%- when 'sku' -%}
@@ -676,6 +695,27 @@
                 {% render 'icon-with-text', block: block %}
             {%- endcase -%}
           {%- endfor -%}
+
+
+
+          {% comment %} 🧺 Care Instructions  {% endcomment %}
+
+        
+
+
+          <div class="notice">
+            <h5>🧺 Care Instructions</h5>
+            <p>Machine wash cold, gentle cycle. Tumble dry low. Do not bleach. Do not iron decoration.</p>
+          </div>
+
+
+           <div class="notice bg-yellow">
+            <h5>📦 Pre-Order Notice</h5>
+            <p>This is a pre-order item. Your order will be produced after purchase and will ship within <strong>3–4 weeks</strong>. You'll receive a shipping confirmation email once your order is on its way.</p>
+          </div>
+
+
+
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
             {{ 'products.product.view_full_details' | t }}
             {{- 'icon-arrow.svg' | inline_asset_content -}}

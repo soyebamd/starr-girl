@@ -338,9 +338,9 @@ h3,
 
 h4,
 .h4 {
-  font-family: var(--font-heading-family);
+  /* font-family: var(--font-heading-family); */
   font-style: var(--font-heading-style);
-  font-size: calc(var(--font-heading-scale) * 1.5rem);
+  font-size: calc(var(--font-heading-scale) * 1.8rem);
 }
 
 h5,
@@ -404,7 +404,7 @@ blockquote {
   letter-spacing: 0.18rem;
 }
 
-.caption-large,
+/* .caption-large,
 .customer .field input,
 .customer select,
 .field__input,
@@ -423,6 +423,17 @@ blockquote {
   background: #fff;
   transition: border-color 0.2s;
   box-sizing: border-box;
+} */
+
+.caption-large,
+.customer .field input,
+.customer select,
+.field__input,
+.form__label,
+.select__select {
+  font-size: 1.3rem;
+  line-height: calc(1 + 0.5 / var(--font-body-scale));
+  letter-spacing: 0.04rem;
 }
 
 .color-foreground {
@@ -1681,7 +1692,7 @@ details[open] > .share-button__fallback {
   font-size: 1.2rem;
   color: rgba(var(--color-foreground), 0.75);
 }
-
+/* 
 .field:hover.field:after,
 .select:hover.select:after,
 .select__select:hover.select__select:after,
@@ -1714,7 +1725,7 @@ details[open] > .share-button__fallback {
     rgba(var(--color-foreground));
   outline: 0;
   border-radius: var(--inputs-radius);
-}
+} */
 
 .localization-form__select:focus {
   outline: 0;

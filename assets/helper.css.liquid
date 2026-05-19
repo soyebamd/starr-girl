@@ -1,0 +1,44 @@
+
+  {% for i in (0..100) %}
+
+    /* Margin Bottom */
+    .mb-{{ i }} {
+      margin-bottom: {{ i }}px !important;
+    }
+
+    /* Margin Top */
+    .mt-{{ i }} {
+      margin-top: {{ i }}px !important;
+    }
+
+    /* Margin Left */
+    .ml-{{ i }} {
+      margin-left: {{ i }}px !important;
+    }
+
+    /* Margin Right */
+    .mr-{{ i }} {
+      margin-right: {{ i }}px !important;
+    }
+
+    /* Padding Bottom */
+    .pb-{{ i }} {
+      padding-bottom: {{ i }}px !important;
+    }
+
+    /* Padding Top */
+    .pt-{{ i }} {
+      padding-top: {{ i }}px !important;
+    }
+
+    /* Padding Left */
+    .pl-{{ i }} {
+      padding-left: {{ i }}px !important;
+    }
+
+    /* Padding Right */
+    .pr-{{ i }} {
+      padding-right: {{ i }}px !important;
+    }
+
+  {% endfor %}

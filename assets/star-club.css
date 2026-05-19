@@ -100,10 +100,17 @@
 .sg-field {
   margin-bottom: 14px;
 }
-.sg-input {
+.field input:after,
+.field:after,
+.field:before,
+.field input:before {
+  display: none;
+}
+.sg-input,
+.field input {
   width: 100%;
   padding: 14px 18px;
-  border: 3px solid #ffb3dc;
+  border: 3px solid #ffb3dc !important;
   border-radius: 14px;
   font-size: 15px;
   font-family: "Nunito", sans-serif;
@@ -112,8 +119,9 @@
   transition: border-color 0.2s;
   box-sizing: border-box;
 }
-.sg-input:focus {
-  border-color: #ff2090;
+.sg-input:focus,
+.field input:focus {
+  border-color: #ff2090 !important;
   outline: none;
 }
 .sg-coppa-notice {

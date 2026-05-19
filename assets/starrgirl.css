@@ -1109,11 +1109,6 @@ header .button {
 /* ==========================================
    PRODUCT PAGE OVERRIDES  
    ========================================== */
-.product__title h1 {
-  font-family: "Fredoka One", cursive;
-  font-size: 28px;
-  color: #1a1a1a;
-}
 
 .product__text .price__regular .price-item {
   font-family: "Fredoka One", cursive;

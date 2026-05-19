@@ -14,6 +14,7 @@
       "blocks": {
         "vendor": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "{{ product.vendor }}",
             "text_style": "uppercase"
@@ -68,8 +69,8 @@
       ],
       "settings": {
         "enable_sticky_info": true,
-        "color_scheme": "scheme-1",
-        "media_size": "large",
+        "color_scheme": "scheme-adcb8831-edf0-458a-a020-78c5afa54e78",
+        "media_size": "small",
         "constrain_to_viewport": true,
         "media_fit": "contain",
         "gallery_layout": "stacked",
